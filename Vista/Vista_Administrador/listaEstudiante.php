@@ -48,6 +48,20 @@
                         <input class="btn btn-link" type="submit" value="Registrar Maestro" name="boton3">
                     </form>
                 </li>
+                  <!--nav que muestra los estudiantes inactivos-->
+                  <li>
+                    <form action="EstudianteInactivos.php" method="post">
+                        <span class="iconos"><i class="fa-solid fa-user-check"></i></span>
+                        <input class="btn btn-link" type="submit" value="Estudiante Inactivos">
+                    </form>
+                </li>
+                <!--nav que muestra los profesores inactivos-->
+                <li>
+                    <form action="ProfesorInactivo.php">
+                        <span class="iconos"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <input class="btn btn-link" type="submit" value="Profesores Inactivos">
+                    </form>
+                </li>
                 <li>
                     <form action="../../index.php" method="post">
                         <span class="iconos"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
