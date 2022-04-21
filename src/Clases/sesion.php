@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Clases;
+
 session_start();
 require "Persona.php";
 class IniciarSesion extends Persona{

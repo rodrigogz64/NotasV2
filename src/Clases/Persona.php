@@ -1,5 +1,9 @@
 <?php
-require "conexion.php";
+
+namespace App\Clases;
+
+require "Conexion.php";
+
 class Persona extends Conexion{
 
     //atributos

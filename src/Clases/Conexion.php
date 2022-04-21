@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Clases;
+
 class Conexion{
     public $servername = "localhost";  
     public $username = "root";
@@ -13,4 +16,7 @@ class Conexion{
         }
     }
 }
+ $conexion = new Conexion();
+
+ echo $conexion->servername;
 ?>
