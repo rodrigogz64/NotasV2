@@ -1,5 +1,14 @@
 {
+    "name": "grupo-2/notas-v2",
+    "type": "project",
     "require-dev": {
-        "phpunit/phpunit": "9.5"
-    }
+        "phpunit/phpunit": "^9.5"
+    },
+    "authors": [
+        {
+            "name": "Alejandro Monge",
+            "email": "almartinez0707@gmail.com"
+        }
+    ],
+    "require": {}
 }
