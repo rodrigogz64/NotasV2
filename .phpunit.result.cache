@@ -1,0 +1,1 @@
+{"version":1,"defects":{"PersonaTest::testClassConstructor":4,"Warning":6,"ConexionTest::testDBCredentials":4},"times":{"PersonaTest::testClassConstructor":0.004,"Warning":0.003,"ConexionTest::testDBCredentials":0.003}}
