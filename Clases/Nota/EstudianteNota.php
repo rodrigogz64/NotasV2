@@ -1,5 +1,7 @@
 <?php
 
+use App\Conexion;
+
 class EstudianteNota
 {
     //formulario para agregar notas y depende de el metodo ingresar notas

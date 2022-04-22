@@ -1,5 +1,7 @@
 <?php
 
+use App\Conexion;
+
 class IdProfesor
 {
     //metodo que extrae los datos del profesor para modificarlo segun su ID

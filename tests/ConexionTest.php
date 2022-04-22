@@ -1,6 +1,6 @@
 <?php
 
-use App\Clases\Conexion;
+use App\Conexion;
 
 use PHPUnit\Framework\TestCase;
 
@@ -8,7 +8,7 @@ class ConexionTest extends TestCase
 {
     public function testDBCredentials()
     {
-        $conexion = new \App\Clases\Conexion();
+        $conexion = new \App\Conexion();
 
         $this->assertSame('localhost', $conexion->servername);
         $this->assertSame('root', $conexion->username);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Clases\Nota;
+use App\Conexion;
 
 class ModificarNota
 {

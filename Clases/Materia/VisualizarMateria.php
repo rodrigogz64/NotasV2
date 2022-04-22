@@ -1,6 +1,6 @@
 <?php
 
-namespace \App\Clases;
+use App\Conexion;
 
 class  VisualizarMateria
 {

@@ -1,5 +1,7 @@
 <?php
 
+use App\Conexion;
+
 class ModificarProfesor 
 {
     //metodo que actualiza los datos de los profesores

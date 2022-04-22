@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Clases;
+use App\Conexion;
 
 session_start();
 require "Persona.php";
+
 class IniciarSesion extends Persona{
     
     /* metodo que verfica quien tiene acceso a la pagina
     y redericciona dependiendo el usuario */
     public function AutenticarUsuario(){
-        $this->conexionDB();
-        $this->Persona();
+        //conexion DB
+        $conexion = new Conexion();
+        $conexion->conexionDB();
         
         
         if(isset($_POST['user'], $_POST['pass'])){
