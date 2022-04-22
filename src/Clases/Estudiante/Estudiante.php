@@ -4,7 +4,7 @@ namespace App\Clases;
 
 require "Persona.php";
 
-class PerfilEstudiante extends Persona{
+class Estudiante extends Persona{
     public $aula;
     public $estado;
 

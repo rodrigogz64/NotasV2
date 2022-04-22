@@ -11,6 +11,9 @@ class ConexionTest extends TestCase
         $conexion = new \App\Clases\Conexion();
 
         $this->assertSame('localhost', $conexion->servername);
+        $this->assertSame('root', $conexion->username);
+        $this->assertSame('', $conexion->password);
+        $this->assertSame('notas', $conexion->database);
         
     }
 }

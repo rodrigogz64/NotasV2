@@ -2,7 +2,7 @@
 
 namespace \App\Clases;
 
-class PerfilProfesor extends Persona 
+class Profesor extends Persona 
 {
     //atributos
     public $materia;
