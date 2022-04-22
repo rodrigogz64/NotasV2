@@ -13,6 +13,8 @@ class Conexion{
         $this->con = mysqli_connect($this->servername, $this->username, $this->password, $this->database);
         if($this->con->connect_error){
             echo "Conexion fallida. " . $this->con->connect_error;
+        } else {
+            echo "it worked";
         }
     }
 }
