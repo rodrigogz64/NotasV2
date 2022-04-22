@@ -1,12 +1,13 @@
 <?php
 
-class  VisualizarMateria
+use App\Conexion;
+
+class VisualizarMateria extends Conexion
 {
     //Muestra todas las materias que puden llevar los alumnos(Diseño)
     function disponibles(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         $query = "SELECT * FROM materia";
         $result = mysqli_query($this->con, $query);
@@ -19,8 +20,7 @@ class  VisualizarMateria
     //metodo que muestra todas las materias en un select(Diseño)
     public function verTodo(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
         
         $query = "SELECT * FROM materia";
         $result = mysqli_query($this->con, $query);

@@ -1,12 +1,13 @@
 <?php
 
-class RegistrarProfesor 
+use App\Conexion;
+
+class RegistrarProfeso extends Conexion
 {
     //metodo que registrar profesor
     public function agregar(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
         
         if(isset($_POST['materia'])){
             $this->materia = $_POST['materia'];

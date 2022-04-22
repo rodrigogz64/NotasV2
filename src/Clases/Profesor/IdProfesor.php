@@ -1,12 +1,13 @@
 <?php
 
-class IdProfesor
+use App\Conexion;
+
+class IdProfesor extends Conexion
 {
     //metodo que extrae los datos del profesor para modificarlo segun su ID
     public function extraerId(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
         
         if(isset($_POST['idprofesor'])){
             $idProfesor = $_POST['idprofesor'];

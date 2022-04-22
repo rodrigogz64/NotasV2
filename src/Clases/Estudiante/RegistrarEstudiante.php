@@ -1,12 +1,13 @@
 <?php
 
-class registrarEstudiante
+use App\Conexion;
+
+class registrarEstudiante extends Conexion
 {
     //metodo para registrar alumnos
     public function agregar(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         if(isset($_POST['aula'])){
             $this->aula = $_POST['aula'];

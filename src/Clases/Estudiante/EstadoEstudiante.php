@@ -1,12 +1,14 @@
 <?php
 
-class EstadoEstudiante
+use App\Conexion;
+
+
+class EstadoEstudiante extends Conexion
 {
     //metodo que muestra todos los alumnos inscritos
     public function verActivos($rol){
        //conexion DB
-       $conexion = new Conexion();
-       $conexion->conexionDB();
+       $this->conexionDB();
        
        //WHERE estudiante.idEstado = 1 -> agregar para quitar a las personas inactivas
        $query = "SELECT estudiante.*, aula.nombre AS aula, estado.tipoEstado AS estado FROM estudiante INNER JOIN aula on estudiante.Idaula=aula.id INNER JOIN estado ON estudiante.idEstado=estado.Id WHERE estudiante.idEstado = $rol";

@@ -1,12 +1,13 @@
 <?php
 
-class EstudianteNota
+use App\Conexion;
+
+class EstudianteNota extends Conexion
 {
     //formulario para agregar notas y depende de el metodo ingresar notas
     public function estudianteNotas(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         if(isset($_POST['idestudiante'])){
             $estudiante = $_POST['idestudiante'];

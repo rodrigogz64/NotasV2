@@ -1,12 +1,13 @@
 <?php
 
-class VisualizarProfesor
+use App\Conexion;
+
+class VisualizarProfesor extends Conexion
 {
     //metodo que muestra quien es el que está teniendo acceso a la pagina
     public function ver(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         $profe = $_SESSION['profe'];
         $query = "SELECT profesor.*, materia.id AS idmateria, materia.nombre AS materia FROM profesor INNER JOIN materia ON profesor.Idmateria= materia.Id  WHERE profesor.Id=$profe";

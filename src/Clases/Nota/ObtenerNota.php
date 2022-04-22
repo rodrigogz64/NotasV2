@@ -1,12 +1,13 @@
 <?php
 
-class ObtenerNota
+use App\Conexion;
+
+class ObtenerNota extends Conexion
 {
     //metodo que extrae las notas de cada estudiante
     public function extraerNota(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
         
         if(isset($_POST['idestudiante'])){
             $estudiante = $_POST['idestudiante'];

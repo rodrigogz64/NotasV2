@@ -1,11 +1,12 @@
 <?php
 
-class ActualizarEstudiante
+use App\Conexion;
+
+class ActualizarEstudiante extends Conexion
 {
     public function modificar(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         if(isset($_POST['modificar'])){
             $nombre = $_POST['nombre'];

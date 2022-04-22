@@ -1,12 +1,13 @@
 <?php
 
-class Aula 
+use App\Conexion;
+
+class Aula extends Conexion
 {
     //Metodo que muestra las aulas disponibles
     public function aulasDisponibles(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         $query = "SELECT * FROM aula";
         $resultado = mysqli_query($this->con, $query);

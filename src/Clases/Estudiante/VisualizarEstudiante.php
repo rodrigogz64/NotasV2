@@ -1,12 +1,13 @@
-<?php 
+<?php
 
-class VisualizarEstudiante
+use App\Conexion;
+
+class VisualizarEstudiante extends Conexion
 {
     //metodo que muestra quien es el que está teniendo acceso a la pagina
     public function verInformacion(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         $cont = 0;
         $alumno = $_SESSION['alumno'];

@@ -1,12 +1,13 @@
 <?php
 
-class ListadoProfesor
+use App\Conexion;
+
+class ListadoProfesor extends Conexion
 {
     //metodo que muestra a todos los profesores
     public function verLista($rol){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         $query = "SELECT profesor.*, materia.nombre AS materia, estado.tipoEstado AS estado FROM profesor INNER JOIN materia on profesor.Idmateria=materia.id INNER JOIN estado ON profesor.idEstado=estado.Id WHERE profesor.idEstado=$rol";
         $result = mysqli_query($this->con, $query);

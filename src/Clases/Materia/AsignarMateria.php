@@ -1,12 +1,13 @@
 <?php
 
-class AsignarMateria
+use App\Conexion;
+
+class AsignarMateria extends Conexion
 {
     //metodo que le asigna las materias el Estudiante y las alamacena en la BD
     public function asignar(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         if(isset($_POST['asignarMaterias'])){
             $idEstudiante = $_POST['idestudiante'];

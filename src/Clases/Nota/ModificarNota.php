@@ -1,12 +1,13 @@
 <?php
 
-class ModificarNota
+use App\Conexion;
+
+class ModificarNota extends Conexion
 {
     //metodo que modifica la nota del estudiante
     public function modificarNota(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
         
         if(isset($_POST['extraerNota'])){
             $idEstudiante = $_POST['idEstudiante'];

@@ -1,6 +1,8 @@
 <?php
 
-class IngresarNota
+use App\Conexion;
+
+class IngresarNota extends Conexion
 {
     //metodo que ingresa las notas del estudiante
     public function agregarNotaEstudiante(){

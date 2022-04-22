@@ -1,6 +1,8 @@
 <?php
 
-class ListadoEstudiante
+use App\Conexion;
+
+class ListadoEstudiante extends Conexion
 {
     //metodo que muestra los estudiantes de su materia al profesor
     public function visualizarAsignadas(){

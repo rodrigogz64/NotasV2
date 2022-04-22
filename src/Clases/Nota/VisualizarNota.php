@@ -1,12 +1,13 @@
 <?php
 
-class VisualizarNota 
+use App\Conexion;
+
+class VisualizarNota extends Conexion
 {
     //metodo que muestra las notas segun la materia que escoja el estudiante 
     public function verSeleccionPorMateria(){
         //conexion DB
-        $conexion = new Conexion();
-        $conexion->conexionDB();
+        $this->conexionDB();
 
         if(isset($_POST['nota_materia'])){
             $materia = $_POST['nota_materia'];

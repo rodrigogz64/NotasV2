@@ -1,6 +1,8 @@
 <?php
 
-class ModificarProfesor 
+use App\Conexion;
+
+class ModificarProfesor extends Conexion
 {
     //metodo que actualiza los datos de los profesores
     public function modificarProfesor(){
