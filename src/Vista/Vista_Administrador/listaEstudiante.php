@@ -12,9 +12,14 @@
 </head>
 <body>
     <?php
+<<<<<<< HEAD:src/Vista/Vista_Administrador/listaEstudiante.php
         require_once "../../Clases/Estudiante.php";
         require_once "../../Clases/EstadoEstudiante.php";
         $estado_estudiante = new EstadoEstudiante();
+=======
+        require __DIR__.'/../src/Clases/Estudiante/Estudiante.php';
+        $estudiante = new Estudiante();
+>>>>>>> bad34d1b7cb89f6fa4efb051d21f2764f5857ce8:Vista/Vista_Administrador/listaEstudiante.php
     ?>
     <div class="contenido">
         <div class="navegador">

@@ -131,4 +131,9 @@
     </script>
 
 </body>
+<<<<<<< HEAD:src/Vista/Vista_Administrador/listaProfesor.php
 </html>
+=======
+</html>
+
+>>>>>>> bad34d1b7cb89f6fa4efb051d21f2764f5857ce8:Vista/Vista_Administrador/listaProfesor.php
