@@ -47,14 +47,14 @@
                   <!--nav que muestra los estudiantes inactivos-->
                   <li>
                     <form action="EstudianteInactivos.php" method="post">
-                        <span class="iconos"><i class="fa-solid fa-user-check"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-user-clock"></i></span>
                         <input class="btn btn-link" type="submit" value="Estudiante Inactivos">
                     </form>
                 </li>
                 <!--nav que muestra los profesores inactivos-->
                 <li>
                     <form action="ProfesorInactivo.php">
-                        <span class="iconos"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-person-chalkboard"></i></span>
                         <input class="btn btn-link" type="submit" value="Profesores Inactivos">
                     </form>
                 </li>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="mb-2 d-grid gap-2">
                             <!-- boton -->
-                            <input class="btn btn-primary" type="submit" value="Registrar" name="registrarAlumno" id="resgistrarAlumno">
+                            <input class="btn btn-success" type="submit" value="Registrar" name="registrarAlumno" id="resgistrarAlumno">
                         </div>
                     </form>
                     <?php } else{?>

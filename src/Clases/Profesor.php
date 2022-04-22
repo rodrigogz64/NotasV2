@@ -60,7 +60,7 @@ class Profesor extends Persona{
                 $tabla .= "<td>". $imp['Usuario'] ."</td>";
                 $tabla .= "<td>". $imp['estado'] ."</td>";
                 $tabla .= "<form action='modificarProfesor.php' method='POST'>";
-                    $tabla .= "<td><button name='idprofesor' value='".$imp['Id']."'>Modificar</button></td>";
+                    $tabla .= "<td><button class='btn btn-success' name='idprofesor' value='".$imp['Id']."'>Modificar</button></td>";
                 $tabla .= "</form>";
             $tabla .= "</tr>";
             echo $tabla;

@@ -92,7 +92,7 @@ class Estudiante extends Persona{
                     $tabla .= "<td>".$imp['materia']."</td>";
                     $tabla .= "<td>
                                 <form action='VerNota.php' method='POST'>
-                                    <button type='submit' name='nota_materia' value='".$imp['idmateria']."'>Ver Nota</button>
+                                    <button class='btn btn-success' type='submit' name='nota_materia' value='".$imp['idmateria']."'>Ver Nota</button>
                                 </form>
                             </td>";
                 $tabla .= "</tbody>";
@@ -146,7 +146,7 @@ class Estudiante extends Persona{
                 $tabla .= "<td>". $imp['Usuario'] ."</td>";
                 $tabla .= "<td>". $imp['estado'] ."</td>";
                 $tabla .= "<form action='modificarEstudiante.php' method='POST'>";
-                    $tabla .= "<td><button name='idestudiante' value='".$imp['Id']."'>Modificar</button></td>";
+                    $tabla .= "<td><button class='btn btn-success' name='idestudiante' value='".$imp['Id']."'>Modificar</button></td>";
                 $tabla .= "</form>";
             $tabla .= "</tr>";
             echo $tabla;
