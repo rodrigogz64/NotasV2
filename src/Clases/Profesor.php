@@ -1,5 +1,8 @@
 <?php
-require "persona.php";
+
+use App\Clases\Persona;
+
+require "Persona.php";
 class Profesor extends Persona{
 
     //atributos

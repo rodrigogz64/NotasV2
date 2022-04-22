@@ -1,4 +1,7 @@
 <?php
+
+use App\Clases\Persona;
+
 require "Persona.php";
 class Estudiante extends Persona{
     public $aula;

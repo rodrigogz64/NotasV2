@@ -45,7 +45,8 @@ session_start();
     </div>
     <div class="main">
         <div class="reciente">
-        <?php require "../../Clases/Profesor.php";
+        <?php 
+        require "../../Clases/Profesor.php";
         $clase = new Profesor();
         ?>
         

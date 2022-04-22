@@ -33,7 +33,8 @@ class IniciarSesion extends Persona{
                     $rol_prof = mysqli_fetch_assoc($result_profesor);
                     $rol_estu = mysqli_fetch_assoc($result_estudiante);
                     $rol_admin = mysqli_fetch_assoc($result_admin);
-
+                    
+                    //require "../Vista/Vista_Administrador/inicio.php";
                     if($rol_admin['idroles'] == 1){
                         $_SESSION['admin'] = $rol_prof['Id'];
                         header("location:Vista/Vista_Administrador/inicio.php");

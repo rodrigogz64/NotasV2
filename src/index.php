@@ -10,7 +10,9 @@
     <title>Notas</title>
 </head>
 <body>
-    <?php 
+    <?php
+    use App\Clases\IniciarSesion;
+
         require "Clases/sesion.php";
         $verificar = new IniciarSesion();
     ?>
