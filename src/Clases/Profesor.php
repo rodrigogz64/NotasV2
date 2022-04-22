@@ -226,16 +226,17 @@ class Profesor extends Persona{
             $query = "SELECT * FROM profesor WHERE Id=$idProfesor";
             $result = mysqli_query($this->con, $query);
             while($imp = mysqli_fetch_array($result)){
-                $det = "<label>Nombre: </label>";
-                $det .= "<input type='text' name='nombre' value='".$imp['Nombre']."'><br>";
-                $det .= "<label>Apellido: </label>";
-                $det .= "<input type='text' name='apellido' value='".$imp['Apellido']."'><br>";
-                $det .= "<label>Edad: </label>";
-                $det .= "<input type='text' name='edad' value='".$imp['Edad']."'><br>";
-                $det .= "<label>Usuario: </label>";
-                $det .= "<input type='text' name='usuario' value='".$imp['Usuario']."'><br>";
-                $det .= "<input type='hidden' name='idProf' value='".$imp['Id']."'><br>";
-                $det .= "<select name='estado'>";
+                $det = "<label class='form-label'>Nombre: </label>";
+                $det .= "<input class='form-control' type='text' name='nombre' value='".$imp['Nombre']."'><br>";
+                $det .= "<label class='form-label'>Apellido: </label>";
+                $det .= "<input class='form-control' type='text' name='apellido' value='".$imp['Apellido']."'><br>";
+                $det .= "<label class='form-label'>Edad: </label>";
+                $det .= "<input class='form-control' type='text' name='edad' value='".$imp['Edad']."'><br>";
+                $det .= "<label class='form-label'>Usuario: </label>";
+                $det .= "<input class='form-control' type='text' name='usuario' value='".$imp['Usuario']."'><br>";
+                $det .= "<label class='form-label'>Estado: </label>";
+                $det .= "<input class='form-control' type='hidden' name='idProf' value='".$imp['Id']."'><br>";
+                $det .= "<select class='form-select' name='estado'>";
                     $queryEstado = "SELECT * FROM estado";
                     $result = mysqli_query($this->con, $queryEstado);
                     $det .= "<option value=''> Seleccione Estado </option>";
@@ -243,7 +244,7 @@ class Profesor extends Persona{
                         $det .= "<option value='".$estado['Id']."'>".$estado['tipoEstado']."</option>";
                     }
                 $det .= "</select><br>";
-                $det .= "<br><input type='submit' name='modificar' value='Modificar'>";
+                $det .= "<div class='d-grid gap-2'><input class='btn btn-success' type='submit' name='modificar' value='Modificar'></div>";
 
                 echo $det;
             }

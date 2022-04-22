@@ -76,10 +76,22 @@
                 require "../../Clases/Estudiante.php";
                 $estudiante = new Estudiante();
             ?>
-            <h2>Modificar Estudiante</h2>
-            <form method="POST">
-                <?php $estudiante->extraerId(); ?>
-            </form>
+            <section class="d-flex justify-content-center">
+                <div class="card col-sm-6 p-2">
+                    <div class="mb-2">
+                        <h4>Modificar Estudiante</h4>
+                    </div>
+                    <div class="mb-2">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <?php $estudiante->extraerId(); ?>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </section>
+            
+               
             <?php $estudiante->modificarEstudiante(); ?>
         </div>
     </div>

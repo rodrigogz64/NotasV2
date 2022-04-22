@@ -76,10 +76,19 @@
                 require "../../Clases/Profesor.php";
                 $profesor = new Profesor();
             ?>
-            <h2>Modificar Profesor</h2>
-            <form method="POST">
-                <?php $profesor->extraerId(); ?>
-            </form>
+            <section class="d-flex justify-content-center">
+                <div class="card col-sm-6 p-2">
+                    <div class="mb-2">
+                        <h4>Modificar Profesor</h4>
+                    </div>
+                    <div class="mb-2">
+                        <form method="POST">
+                            <?php $profesor->extraerId(); ?>
+                        </form>
+                    </div>
+                </div>
+            </section>
+           
             <?php $profesor->modificarProfesor(); ?>
         </div>
     </div>
