@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class ListadoEstudiante extends Conexion
 {
     //metodo que muestra los estudiantes de su materia al profesor

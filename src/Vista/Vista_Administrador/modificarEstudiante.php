@@ -73,14 +73,16 @@
         <div class="reciente">
              <!-- Pagina que muestra los datos a modificar -->
             <?php
-                require "../../Clases/Estudiante.php";
-                $estudiante = new Estudiante();
+                require "../../Clases/ModificarEstudiante.php";
+                require "../../Clases/IdEstudiante.php";
+                $modificar_estudiante = new ModificarEstudiante();
+                $id_estudiante = new IdEstudiante();
             ?>
             <h2>Modificar Estudiante</h2>
             <form method="POST">
-                <?php $estudiante->extraerId(); ?>
+                <?php $id_estudiante->extraerId(); ?>
             </form>
-            <?php $estudiante->modificarEstudiante(); ?>
+            <?php $modificar_estudiante->modificar(); ?>
         </div>
     </div>
 </body>

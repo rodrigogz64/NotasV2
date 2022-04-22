@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class ObtenerNota extends Conexion
 {
     //metodo que extrae las notas de cada estudiante

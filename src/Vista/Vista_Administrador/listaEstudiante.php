@@ -12,8 +12,9 @@
 </head>
 <body>
     <?php
-        require __DIR__.'/../src/Clases/Estudiante/Estudiante.php';
-        $estudiante = new Estudiante();
+        require_once "../../Clases/Estudiante.php";
+        require_once "../../Clases/EstadoEstudiante.php";
+        $estado_estudiante = new EstadoEstudiante();
     ?>
     <div class="contenido">
         <div class="navegador">
@@ -88,7 +89,7 @@
                         <th></th>
                     </thead>
                     <tbody>
-                    <?php $estudiante->listaAlumnosActivos(1) ?>
+                    <?php $estado_estudiante->verActivos(1)?>
                     </tbody>
                 </table>
             </div>

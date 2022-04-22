@@ -5,7 +5,7 @@ use App\Conexion;
 class ListadoProfesor extends Conexion
 {
     //metodo que muestra a todos los profesores
-    public function verLista($rol){
+    public function verListaProfesores($rol){
         //conexion DB
         $this->conexionDB();
 
@@ -33,6 +33,6 @@ class ListadoProfesor extends Conexion
     
     //metodo que muestra a todos los profesores Inactivos
     public function listaProfesorInactivos(){
-        $this->listaProfesor(2);
+        $this->verListaProfesores(2);
     }
 }

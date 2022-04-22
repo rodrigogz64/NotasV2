@@ -40,15 +40,24 @@
     <div class="main">
         <div class="reciente">
         <?php 
-            require "../../Clases/Estudiante.php";
-            $clase = new Estudiante();
-        ?>
+                require "../../Clases/Estudiante.php";
+                require "../../Clases/VisualizarEstudiante.php";
+                require "../../Clases/VisualizarNota.php";
+                $clase = new VisualizarEstudiante();
+                $nota = new VisualizarNota();
+                $clase->verInformacion();                
+            ?>
             <h1>Notas</h1>
         <?php 
                 
-            $clase->notaMateria();
+                $nota->verSeleccionPorMateria();
         ?>
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:345px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+    </footer>
     </div>
 
 

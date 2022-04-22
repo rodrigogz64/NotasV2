@@ -13,7 +13,8 @@
 <body>
     <?php
         require "../../Clases/Estudiante.php";
-        $estudiante = new Estudiante();
+        require "../../Clases/EstadoEstudiante.php";
+        $estado_estudiante = new EstadoEstudiante();
     ?>
     <div class="contenido">
         <div class="navegador">
@@ -88,7 +89,7 @@
                         <th></th>
                     </thead>
                     <tbody>
-                    <?php $estudiante->listaAlumnosInactivos() ?>
+                    <?php $estado_estudiante->verInactivos() ?>
                     </tbody>
                 </table>
             </div>

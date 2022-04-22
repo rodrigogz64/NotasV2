@@ -2,7 +2,7 @@
 
 use App\Conexion;
 
-require __DIR__.'/../src/Clases/Persona.php';
+require_once __DIR__.'/../../src/Clases/Persona.php';
 
 class Profesor extends Persona 
 {

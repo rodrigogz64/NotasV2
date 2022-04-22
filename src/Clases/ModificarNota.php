@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class ModificarNota extends Conexion
 {
     //metodo que modifica la nota del estudiante

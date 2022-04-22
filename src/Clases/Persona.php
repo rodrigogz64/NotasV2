@@ -2,7 +2,7 @@
 
 use App\Conexion;
 
-require "Conexion.php";
+require_once __DIR__.'/../../src/Clases/Conexion.php';
 
 class Persona extends App\Conexion{
 

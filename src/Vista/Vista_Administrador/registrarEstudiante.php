@@ -47,14 +47,14 @@
                   <!--nav que muestra los estudiantes inactivos-->
                   <li>
                     <form action="EstudianteInactivos.php" method="post">
-                        <span class="iconos"><i class="fa-solid fa-user-check"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-user-clock"></i></span>
                         <input class="btn btn-link" type="submit" value="Estudiante Inactivos">
                     </form>
                 </li>
                 <!--nav que muestra los profesores inactivos-->
                 <li>
                     <form action="ProfesorInactivo.php">
-                        <span class="iconos"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-person-chalkboard"></i></span>
                         <input class="btn btn-link" type="submit" value="Profesores Inactivos">
                     </form>
                 </li>
@@ -72,8 +72,9 @@
         <?php 
             //llamando al archivo que contiene la clase
             require "../../Clases/Estudiante.php";
+            require "../../Clases/RegistrarEstudiante.php";
             //Instancia de la clase
-            $persona = new Estudiante();
+            $registrar_estudiante = new RegistrarEstudiante();
             if(!isset($_POST['registrarAlumno'])){
         ?>
         <section class="d-flex justify-content-center">
@@ -98,7 +99,11 @@
                         <div class="mb-2">
                             <label for="aula" class="form-label">Aula</label>
                             <select name="aula" id="" class="form-select" require>
-                                <?php $persona->aulasDispobibles(); ?>
+                            <?php 
+                                    require "../../Clases/Aula.php";
+                                    $aula = new Aula();
+                                    $aula->aulasDisponibles();                                 
+                                ?>
                             </select>
                         </div>
                         <div class="mb-2">
@@ -111,32 +116,41 @@
                         </div>
                         <div class="mb-2 d-grid gap-2">
                             <!-- boton -->
-                            <input class="btn btn-primary" type="submit" value="Registrar" name="registrarAlumno" id="resgistrarAlumno">
+                            <input class="btn btn-success" type="submit" value="Registrar" name="registrarAlumno" id="resgistrarAlumno">
                         </div>
                     </form>
                     <?php } else{?>
                     <form action="" method="POST">
-                        <?php
+                    <?php
                         //recibe los datos del nuevo estudiante y los almacena en la base de datos  
-                            $persona->resgistrarEstudiante();
+                            $registrar_estudiante->agregar();
                         ?>
                         <br>
                         <br>
                         <label for="">Asignar Materias</label><br>
                         <!-- checkbox que contienen las materias -->
-                        <?php $persona->materiasDisponibles(); ?>
+                        <?php 
+                            require "../../Clases/VisualizarMateria.php";
+                            $ver_materia = new VisualizarMateria();
+                            $ver_materia->disponibles(); 
+                        
+                        ?>
                         <br>
                         <!-- boton para asignar las materias al estudiante -->
                         <input type="submit" name="asignarMaterias" placeholder="Asignar Materias">
                     </form>
                     <?php
-                        }$persona->asignarMateria();  
+                        }
+                        require "../../Clases/AsignarMateria.php";
+                        $materia = new AsignarMateria();
+                        $materia->asignar();  
                     ?>
                 </div>
             </div>
         </section>
        
         </div>
+        
     </div>
     </div>
     
@@ -146,4 +160,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
-

@@ -45,21 +45,39 @@ session_start();
     </div>
     <div class="main">
         <div class="reciente">
-        <?php require "../../Clases/Profesor.php";
-        $clase = new Profesor();
+        <?php 
+        require "../../Clases/Profesor.php";
+        require "../../Clases/EstudianteNota.php";
+        $nota_estudiante = new EstudianteNota();
+        ?>
+        <section class="d-flex justify-content-center">
+            <div class="card col-sm-6 p-2">
+                <div class="mb-2">
+                    <h4>Agregar Notas</h4>
+                </div>
+                <div class="mb-2">
+                    <form action="" method="POST">
+                        <?php $nota_estudiante->verEstudianteNotas(); ?>
+                        <div class="d-grid gap-2">
+                            <input class='btn btn-success' type="submit" name='registrarNota' value="Agregar Notas">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <?php 
+            require "../../Clases/IngresarNota.php"; 
+            $agregar_nota = new IngresarNota();
+            $agregar_nota->agregarNotaEstudiante();  
         ?>
         
-        <h2>Agregar Notas</h2>
-      
-        <form action="" method="POST">
-            <?php $clase->estudianteNotas(); ?>
-            <div class="d-grid gap-2">
-                <input class='btn btn-success' type="submit" name='registrarNota' value="Agregar Notas">
-            </div>
-        </form>
-        <?php $clase->ingresarNotas(); ?>
-        
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:220px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+        </footer>
     </div>
 </body>
 </html>

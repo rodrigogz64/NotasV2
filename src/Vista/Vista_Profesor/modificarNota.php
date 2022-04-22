@@ -47,15 +47,33 @@ session_start();
         <div class="reciente">
         <?php 
         require "../../Clases/Profesor.php";
-        $profe = new Profesor();
+        require "../../Clases/ObtenerNota.php";
+        $obtener_nota = new ObtenerNota();
         ?>
-        <h1>Modificar Notas</h1>
-        <form action="" method="POST">
-            <?php $profe->extraerNota(); ?>
-        </form>
-        <?php $profe->modificarNota(); ?>
+        <section class="d-flex justify-content-center">
+            <div class="card col-sm-6 p-2">
+                <div class="mb-2">
+                    <h4>Modificar Notas</h4>
+                </div>
+                <div class="mb-2">
+                    <form action="" method="POST">
+                        <?php $obtener_nota->extraerNota(); ?>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <?php 
+            require "../../Clases/ModificarNota.php";
+            $modificar_nota = new ModificarNota();
+            $modificar_nota->modificarNota(); 
+        ?>
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:90px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+        </footer>
     </div>
 </body>
 </html>
-

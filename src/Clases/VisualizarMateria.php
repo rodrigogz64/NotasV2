@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class VisualizarMateria extends Conexion
 {
     //Muestra todas las materias que puden llevar los alumnos(Diseño)

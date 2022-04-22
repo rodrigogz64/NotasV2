@@ -4,9 +4,9 @@ use App\Conexion;
 
 require_once "Conexion.php";
 
-class ModificarProfesor extends Conexion
+class ModificarEstudiante extends Conexion
 {
-    //metodo que actualiza los datos de los profesores
+    //metodo que actuliza los datos de los estudiantes
     public function modificar(){
         $this->conexionDB();
         if(isset($_POST['modificar'])){
@@ -15,15 +15,17 @@ class ModificarProfesor extends Conexion
             $edad = $_POST['edad'];
             $usuario = $_POST['usuario'];
             $estado = $_POST['estado'];
-            $idProf = $_POST['idProf'];
-            $query = "UPDATE profesor SET Nombre='$nombre',Apellido='$apellido',Edad=$edad,Usuario='$usuario',idEstado=$estado WHERE Id=$idProf";
+            //Id del estudiante
+            $idEst = $_POST['idEst'];
+            $query = "UPDATE estudiante SET Nombre='$nombre',Apellido='$apellido',Edad=$edad,Usuario='$usuario', idEstado=$estado WHERE Id=$idEst";
             $result = mysqli_query($this->con, $query);
             if(!empty($result)){
-                header("location:listaProfesor.php");
+                header("location:listaEstudiante.php");
             }
             else{
                 echo "Error al actualizar";
             }
         }
+
     }
 }

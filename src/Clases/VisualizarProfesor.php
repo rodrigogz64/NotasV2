@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class VisualizarProfesor extends Conexion
 {
     //metodo que muestra quien es el que está teniendo acceso a la pagina

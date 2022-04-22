@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class registrarEstudiante extends Conexion
 {
     //metodo para registrar alumnos

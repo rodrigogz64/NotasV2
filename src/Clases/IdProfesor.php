@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class IdProfesor extends Conexion
 {
     //metodo que extrae los datos del profesor para modificarlo segun su ID

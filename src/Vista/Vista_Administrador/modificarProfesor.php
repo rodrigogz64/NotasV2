@@ -49,14 +49,14 @@
                   <!--nav que muestra los estudiantes inactivos-->
                   <li>
                     <form action="EstudianteInactivos.php" method="post">
-                        <span class="iconos"><i class="fa-solid fa-user-check"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-user-clock"></i></span>
                         <input class="btn btn-link" type="submit" value="Estudiante Inactivos">
                     </form>
                 </li>
                 <!--nav que muestra los profesores inactivos-->
                 <li>
                     <form action="ProfesorInactivo.php">
-                        <span class="iconos"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="iconos"><i class="fa-solid fa-person-chalkboard"></i></span>
                         <input class="btn btn-link" type="submit" value="Profesores Inactivos">
                     </form>
                 </li>
@@ -72,16 +72,32 @@
     <div class="main">
         <div class="reciente">
            <!-- Pagina que muestra los datos a modificar -->
-            <?php
-                require "../../Clases/Profesor.php";
-                $profesor = new Profesor();
+           <?php
+                require "../../Clases/ModificarProfesor.php";
+                require "../../Clases/IdProfesor.php";
+                $modificar_profesor = new ModificarProfesor();
+                $id_profesor = new IdProfesor();
             ?>
-            <h2>Modificar Profesor</h2>
-            <form method="POST">
-                <?php $profesor->extraerId(); ?>
-            </form>
-            <?php $profesor->modificarProfesor(); ?>
+            <section class="d-flex justify-content-center">
+                <div class="card col-sm-6 p-2">
+                    <div class="mb-2">
+                        <h4>Modificar Profesor</h4>
+                    </div>
+                    <div class="mb-2">
+                        <form method="POST">
+                        <?php $id_profesor->extraerId(); ?>
+                        </form>
+                    </div>
+                </div>
+            </section>
+           
+            <?php $modificar_profesor->modificar(); ?>
+        </div><footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:75px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
         </div>
+     </footer>
+
     </div>
 </body>
 </html>

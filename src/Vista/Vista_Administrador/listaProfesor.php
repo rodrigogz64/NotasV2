@@ -12,8 +12,9 @@
 </head>
 <body>
     <?php
-        require "../../Clases/Profesor.php";
-        $profe = new Profesor();
+        require_once "../../Clases/Profesor.php";
+        require_once "../../Clases/ListadoProfesor.php";
+        $listado_profesor = new ListadoProfesor();
     ?>
     <div class="contenido">
         <div class="navegador">
@@ -88,7 +89,7 @@
                     <th></th>
                 </thead>
                 <tbody>
-                    <?php $profe->listaProfesor(1); ?>
+                <?php $listado_profesor->verListaProfesores(1); ?>
                 </tbody>
             </table>
         </div>
@@ -131,4 +132,3 @@
 
 </body>
 </html>
-

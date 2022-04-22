@@ -71,8 +71,9 @@
         <?php 
         //llamando al archivo que contiene la clase
         require "../../Clases/Profesor.php";
+        require "../../Clases/RegistrarProfesor.php";
         //Instancia de la clase
-        $profesor = new Profesor();     
+        $registro_profesor = new RegistrarProfesor();     
      ?>
         <section class="d-flex justify-content-center">
             <div class="card col-sm-6 p-2">
@@ -97,7 +98,11 @@
                             <label for="aula" class="form-label">Aula</label>
                             <select name="materia" id="materia" class="form-select" >
                                 <option value="">Seleccione una materia</option>
-                            <?php $profesor->verMaterias(); ?>
+                            <?php                             
+                                require "../../Clases/VisualizarMateria.php";
+                                $ver_materia = new VisualizarMateria();
+                                $ver_materia->disponibles(); 
+                            ?>
                             </select>
                         </div>
                         <div class="mb-2">
@@ -115,7 +120,7 @@
                     </form>
                     <?php
                         //recibe los datos del nuevo profesor y los almacena en la base de datos
-                        $profesor->resgistrarProfesor();
+                        $registro_profesor->agregar();
                     ?>
                 </div>
             </div>

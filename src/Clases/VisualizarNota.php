@@ -2,6 +2,8 @@
 
 use App\Conexion;
 
+require_once "Conexion.php";
+
 class VisualizarNota extends Conexion
 {
     //metodo que muestra las notas segun la materia que escoja el estudiante 

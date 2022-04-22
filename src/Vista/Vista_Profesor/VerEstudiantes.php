@@ -49,7 +49,8 @@ session_start();
         <div class="reciente">
             <?php 
                 require "../../Clases/Profesor.php";
-                $clase = new Profesor();
+                require "../../Clases/VisualizarProfesor.php";
+                $clase = new VisualizarProfesor();
                 $clase->ver();
                 
             ?>
@@ -68,12 +69,22 @@ session_start();
                         <th></th>
                     </thead>
                     <tbody>
-                    <?php $clase->VerEstudiantesNotas(); ?>
+                    <?php                     
+                        require "../../Clases/EstudianteNota.php";
+                        $estudiante = new EstudianteNota();
+                        $estudiante->verEstudianteNotas();                    
+                    ?>
                     </tbody>
                 </table>
                 <a href="Alumnos.php">Agregar Notas</a>
             </div>
+            
     </div>
+            <footer>
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:60px">
+                © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+            </div>
+            </footer>
     </div>
     
     
