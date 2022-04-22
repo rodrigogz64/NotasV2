@@ -16,7 +16,4 @@ class Conexion{
         }
     }
 }
- $conexion = new Conexion();
 
- echo $conexion->servername;
-?>

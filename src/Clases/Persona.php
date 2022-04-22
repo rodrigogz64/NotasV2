@@ -4,7 +4,7 @@ namespace App\Clases;
 
 require "Conexion.php";
 
-class Persona extends Conexion{
+class Perfil extends Conexion{
 
     //atributos
     public $nombre;

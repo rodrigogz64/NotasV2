@@ -11,6 +11,6 @@ class ConexionTest extends TestCase
         $conexion = new \App\Clases\Conexion();
 
         $this->assertSame('localhost', $conexion->servername);
-
+        
     }
 }
