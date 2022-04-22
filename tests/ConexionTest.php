@@ -8,11 +8,11 @@ class ConexionTest extends TestCase
 {
     public function testDBCredentials()
     {
-        $conexion = new \App\Conexion();
+        $conexion = new Conexion();
 
         $this->assertSame('localhost', $conexion->servername);
         $this->assertSame('root', $conexion->username);
-        $this->assertSame('', $conexion->password);
+        $this->assertSame('password', $conexion->password);
         $this->assertSame('notas', $conexion->database);
         
     }
