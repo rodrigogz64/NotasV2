@@ -49,12 +49,26 @@ session_start();
         require "../../Clases/Profesor.php";
         $profe = new Profesor();
         ?>
-        <h1>Modificar Notas</h1>
-        <form action="" method="POST">
-            <?php $profe->extraerNota(); ?>
-        </form>
+        <section class="d-flex justify-content-center">
+            <div class="card col-sm-6 p-2">
+                <div class="mb-2">
+                    <h4>Modificar Notas</h4>
+                </div>
+                <div class="mb-2">
+                    <form action="" method="POST">
+                        <?php $profe->extraerNota(); ?>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
         <?php $profe->modificarNota(); ?>
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:90px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+        </footer>
     </div>
 </body>
 </html>

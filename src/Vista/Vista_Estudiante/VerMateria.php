@@ -50,6 +50,11 @@
                 
             ?>
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:45px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+    </footer>
     </div>
     
 </body>

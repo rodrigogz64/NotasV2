@@ -49,18 +49,30 @@ session_start();
         require "../../Clases/Profesor.php";
         $clase = new Profesor();
         ?>
-        
-        <h2>Agregar Notas</h2>
-      
-        <form action="" method="POST">
-            <?php $clase->estudianteNotas(); ?>
-            <div class="d-grid gap-2">
-                <input class='btn btn-success' type="submit" name='registrarNota' value="Agregar Notas">
+        <section class="d-flex justify-content-center">
+            <div class="card col-sm-6 p-2">
+                <div class="mb-2">
+                    <h4>Agregar Notas</h4>
+                </div>
+                <div class="mb-2">
+                    <form action="" method="POST">
+                        <?php $clase->estudianteNotas(); ?>
+                        <div class="d-grid gap-2">
+                            <input class='btn btn-success' type="submit" name='registrarNota' value="Agregar Notas">
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </section>
+        
         <?php $clase->ingresarNotas(); ?>
         
         </div>
+        <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); margin-top:220px">
+            © 2022 Copyright: Bootcamp Full Stack Junior (Grupo 2)
+        </div>
+        </footer>
     </div>
 </body>
 </html>

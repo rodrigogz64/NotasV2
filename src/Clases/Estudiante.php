@@ -83,7 +83,7 @@ class Estudiante extends Persona{
         $result = mysqli_query($this->con, $query);
         while($imp = mysqli_fetch_array($result)){
             $nom = "<h2>".$imp['nombre'] . " " . $imp['apellido']. " " . $imp['aula']."</h2> <br>";
-            $tabla = "<table>";
+            $tabla = "<table class='table'>";
                 $tabla .= "<thead>";
                     $tabla .= "<th>Materia</th>";
                     $tabla .= "<th>Ver Nota</th>";
@@ -116,12 +116,12 @@ class Estudiante extends Persona{
             $result = mysqli_query($this->con, $query);
             
                 while($imp = mysqli_fetch_array($result)){
-                    $det = "Estudiante: ".$imp['nombre']." ".$imp['apellido']."<br>";
+                    $det = "<div class='card col-sm-6 p-2'>Estudiante: ".$imp['nombre']." ".$imp['apellido']."<br>";
                     $det .= "Materia: ".$imp['materia']."<br>";
                     $det .= "Nota1: ".$imp['nota1']."<br>";
                     $det .= "Nota2: ".$imp['nota2']."<br>";
                     $det .= "Nota3: ".$imp['nota3']."<br>";
-                    $det .= "Promedio: ". round($imp['promedio'],2);
+                    $det .= "Promedio: ". round($imp['promedio'],2)."</div>";
                     echo $det;
                 }
             

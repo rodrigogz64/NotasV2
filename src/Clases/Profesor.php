@@ -105,7 +105,7 @@ class Profesor extends Persona{
                 $tabla .= "<td>". $imp['nota3'] ."</td>";
                 $tabla .= "<td>". $imp['promedio'] ."</td>";
                 $tabla .= "<form action='modificarNota.php' method='POST'>";
-                    $tabla .= "<td><button name='idestudiante' value='".$imp['idestudiante']."'>Modificar Nota</button></td>";
+                    $tabla .= "<td><button class='btn btn-success' name='idestudiante' value='".$imp['idestudiante']."'>Modificar Nota</button></td>";
                 $tabla .= "</form>";
             $tabla .= "</tr>";
             echo $tabla;
@@ -127,7 +127,7 @@ class Profesor extends Persona{
                     $tabla .= "<td>".$imp['nombre']."</td>";
                     $tabla .= "<td>". $imp['apellido'] ."</td>";
                     $tabla .= "<form action='EstudianteNotas.php' method='POST'>";
-                        $tabla .= "<td><button name='idestudiante' value='".$imp['idestudiante']."'>Agregar Nota</button></td>";
+                        $tabla .= "<td><button class='btn btn-success' name='idestudiante' value='".$imp['idestudiante']."'>Agregar Nota</button></td>";
                     $tabla .= "</form>";
                 $tabla .= "</tr>";
                 echo $tabla;
@@ -143,11 +143,11 @@ class Profesor extends Persona{
             $query = "select * from estudiante where id=$estudiante";
             $result = mysqli_query($this->con, $query);
             while($imp = mysqli_fetch_array($result)){
-                $detalle = "<label>Nombre:</label>".$imp['Nombre']. " " . "<br>";
-                $detalle .= "<input type='hidden' name='estudiante' value='".$imp['Id']."'>";
-                $detalle .= "<input type='text' name='nota1' placeholder='Nota 1'><br>";
-                $detalle .= "<input type='text' name='nota2' placeholder='Nota 2'><br>";
-                $detalle .= "<input type='text' name='nota3' placeholder='Nota 3'><br>";
+                $detalle = "<label class='form-label'>Nombre:</label>".$imp['Nombre']. " " . "<br>";
+                $detalle .= "<input class='form-control' type='hidden' name='estudiante' value='".$imp['Id']."'>";
+                $detalle .= "<input class='form-control' type='text' name='nota1' placeholder='Nota 1'><br>";
+                $detalle .= "<input class='form-control' type='text' name='nota2' placeholder='Nota 2'><br>";
+                $detalle .= "<input class='form-control' type='text' name='nota3' placeholder='Nota 3'><br>";
                 echo $detalle;
             }
         }
@@ -182,16 +182,16 @@ class Profesor extends Persona{
             $query = "SELECT estudiante.Nombre AS nombre, nota.idEstudiante AS idEstudiante, nota.n1 AS nota1, nota.n2 AS nota2, nota.n3 AS nota3, nota.idMateria AS idMateria FROM nota INNER JOIN estudiante ON nota.idEstudiante=estudiante.Id INNER JOIN materia ON nota.idMateria=materia.id WHERE nota.idEstudiante=$estudiante AND nota.idMateria=$this->materia";
             $result = mysqli_query($this->con, $query);
             while($imp = mysqli_fetch_array($result)){
-                $det = "<label><b>Estudiante:</b> " .$imp['nombre']."</label><br>";
-                $det .= "<label>Nota 1</label>";
-                $det .= "<input type='text' name='nota1' value='".$imp['nota1']."'><br>";
-                $det .= "<label>Nota 2</label>";
-                $det .= "<input type='text' name='nota2' value='".$imp['nota2']."'><br>";
-                $det .= "<label>Nota 3</label>";
-                $det .= "<input type='text' name='nota' value='".$imp['nota3']."'><br>";
-                $det .= "<input type='hidden' name='idEstudiante' value='".$imp['idEstudiante']."'><br>";
-                $det .= "<input type='hidden' name='idMateria' value='".$imp['idMateria']."'><br>";
-                $det .= "<input type='submit' name='extraerNota' value='Modificar'>";
+                $det = "<label class='form-label'><b>Estudiante:</b> " .$imp['nombre']."</label><br>";
+                $det .= "<label class='form-label'>Nota 1</label>";
+                $det .= "<input class='form-control' type='text' name='nota1' value='".$imp['nota1']."'><br>";
+                $det .= "<label class='form-label'>Nota 2</label>";
+                $det .= "<input class='form-control' type='text' name='nota2' value='".$imp['nota2']."'><br>";
+                $det .= "<label class='form-label'>Nota 3</label>";
+                $det .= "<input class='form-control' type='text' name='nota' value='".$imp['nota3']."'><br>";
+                $det .= "<input class='form-control' type='hidden' name='idEstudiante' value='".$imp['idEstudiante']."'><br>";
+                $det .= "<input class='form-control' type='hidden' name='idMateria' value='".$imp['idMateria']."'><br>";
+                $det .= "<div class='d-grid gap-2'><input class='btn btn-success'type='submit' name='extraerNota' value='Modificar'></div>";
                 echo $det;
             }
         }
